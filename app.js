@@ -10,7 +10,7 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://max:" +
+    "mongodb+srv://admin:" +
       process.env.MONGO_ATLAS_PW +
       "@cluster0-idtz7.mongodb.net/node-angular?retryWrites=true&w=majority"
   )
@@ -18,8 +18,8 @@ mongoose
   .then(() => {
     console.log("Connected to database!");
   })
-  .catch(() => {
-    console.log("Connection failed! hooray");
+  .catch((err) => {
+    console.log("Connection failed! hooray, error: " + err);
   });
 
 app.use(bodyParser.json());
