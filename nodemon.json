@@ -1,6 +1,6 @@
 {
   "env": {
-    "MONGO_ATLAS_PW": "pivruc-fipcy5-feqgoX "  ,
+    "MONGO_ATLAS_PW": "pivruc-fipcy5-feqgoX"  ,
     "JWT_KEY": "secret_this_should_be_longer"
   }
 }
