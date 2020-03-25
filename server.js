@@ -43,10 +43,13 @@ const onListening = () => {
   debug("Listening on " + bind);
 };
 
-const port = normalizePort(process.env.PORT || "3000");
+const port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT  || 8080);
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 app.set("port", port);
 
 const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
-server.listen(port);
+server.listen(port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", port " + port )
+});

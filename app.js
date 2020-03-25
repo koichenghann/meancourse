@@ -12,13 +12,14 @@ mongoose
   .connect(
     "mongodb+srv://max:" +
       process.env.MONGO_ATLAS_PW +
-      "@cluster0-ntrwp.mongodb.net/node-angular"
+      "@cluster0-idtz7.mongodb.net/node-angular?retryWrites=true&w=majority"
   )
+
   .then(() => {
     console.log("Connected to database!");
   })
   .catch(() => {
-    console.log("Connection failed!");
+    console.log("Connection failed! hooray");
   });
 
 app.use(bodyParser.json());
