@@ -10,6 +10,18 @@ const app = express();
 
 mongoose
   .connect(
+    "mongodb+srv://admin:pivruc-fipcy5-feqgoX@cluster0-idtz7.mongodb.net/node-angular?retryWrites=true&w=majority"
+  )
+
+  .then(() => {
+    console.log("Connected to database!");
+  })
+  .catch((err) => {
+    console.log("Connection failed! hoorayss, error: " + err);
+  });
+/*
+mongoose
+  .connect(
     "mongodb+srv://admin:" +
       process.env.MONGO_ATLAS_PW +
       "@cluster0-idtz7.mongodb.net/node-angular?retryWrites=true&w=majority"
@@ -21,6 +33,7 @@ mongoose
   .catch((err) => {
     console.log("Connection failed! hooray, error: " + err);
   });
+*/
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
